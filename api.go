@@ -1,3 +1,3 @@
 package iam
 
-//go:generate protoc -I . -I vendor --gogoslick_out=plugins=grpc:. ./service.proto
+//go:generate protoc -I . -I $GOPATH/src --gogoslick_out=plugins=grpc:. ./service.proto

@@ -7,6 +7,7 @@ option java_outer_classname = "IamProto";
 package iam;
 
 import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+import "code.ysitd.cloud/api/iam/modals/modals.proto";
 
 option (gogoproto.equal_all) = true;
 option (gogoproto.marshaler_all) = true;
@@ -15,6 +16,15 @@ option (gogoproto.sizer_all) = true;
 option (gogoproto.populate_all) = true;
 option (gogoproto.testgen_all) = true;
 
-service IAM {
+message GetRealmByIDRequest {
+    string id = 1;
+}
 
+message GetRealmByIDResponse {
+    bool exists = 1;
+    modals.Realm realm = 2;
+}
+
+service IAM {
+    rpc getRealmByID(GetRealmByIDRequest) returns (GetRealmByIDResponse) {}
 }

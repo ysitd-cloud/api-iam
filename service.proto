@@ -25,6 +25,13 @@ message GetRealmByIDResponse {
     modals.Realm realm = 2;
 }
 
+message GetAllRealmRequest {}
+
+message GetAllRealmResponse {
+    repeated modals.Realm realm = 1;
+}
+
 service IAM {
     rpc getRealmByID(GetRealmByIDRequest) returns (GetRealmByIDResponse) {}
+    rpc getAllRealm(GetAllRealmRequest) returns (GetAllRealmResponse) {}
 }

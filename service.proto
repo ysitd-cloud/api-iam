@@ -28,7 +28,7 @@ message GetRealmByIDResponse {
 message GetAllRealmRequest {}
 
 message GetAllRealmResponse {
-    repeated modals.Realm realm = 1;
+    repeated modals.Realm realm = 1 [(gogoproto.nullable) = false];
 }
 
 service IAM {
